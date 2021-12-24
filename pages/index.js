@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Banner from '../components/Banner';
 import styles from '../styles/Home.module.css';
 
@@ -15,7 +16,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Banner clickHandler={btnClickHandler} btnText="Horse Clubs nearby"/>
+        <Banner clickHandler={btnClickHandler} btnText="Horse Clubs nearby" />
+        <div className={styles.heroImage}>
+          <Image src="/static/hero-horse-home.png" width={400} height={463} />
+        </div>
       </main>
 
     </div>

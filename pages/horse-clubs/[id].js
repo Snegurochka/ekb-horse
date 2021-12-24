@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from "next/router";
 
 import styles from '../../styles/HorseClubs.module.css';
@@ -16,6 +17,7 @@ export default function HorseClubs() {
             </Head>
 
             <main className={styles.main}>
+                <Link href='/'>Back to home</Link>
                 Horse Clubs {id}
             </main>
 
