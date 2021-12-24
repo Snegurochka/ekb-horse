@@ -14,3 +14,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --purple: #4e56b5;
+  --purple-dark: #404794;
+  --black: rgba(17, 24, 39, 1);
+  --text-purple: #354168;
+  --white-100: rgba(229, 231, 235, 1);
+}

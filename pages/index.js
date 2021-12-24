@@ -1,8 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Banner from '../components/Banner';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
+
+  const btnClickHandler = () => { };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,9 +15,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Equestrian portal
-        </h1>
+        <Banner clickHandler={btnClickHandler} btnText="Horse Clubs nearby"/>
       </main>
 
     </div>
