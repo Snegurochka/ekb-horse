@@ -1,6 +1,6 @@
 .container {
   margin-bottom: 1rem;
-  padding-top: 5rem;
+  padding-top: 16rem;
 }
 
 .title {
@@ -15,7 +15,7 @@
 }
 
 .title1 {
-  color: var(--white-100);
+  color: var(--black);
 }
 
 .title2 {
@@ -32,7 +32,7 @@
     /* 32px */
   ;
 
-  color: var(--white-100);
+  color: var(--black);
 }
 
 .buttonWrapper {
@@ -72,6 +72,10 @@
 
 /** sm breakpoint **/
 @media (min-width: 640px) {
+  .container {
+    padding-top: 5rem;
+  }
+
   .title {
     font-size: 3rem
       /* 48px */
