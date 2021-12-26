@@ -7,7 +7,7 @@ import styles from '../styles/Home.module.css';
 import horseClubs from '../data/horse-clubs.json';
 
 
-export default function Home() {
+export default function Home(props) {
 
   const btnClickHandler = () => { };
 
@@ -25,17 +25,32 @@ export default function Home() {
           <Image src="/static/hero-horse-home.png" width={400} height={463} />
         </div>
 
-        {horseClubs.map((club) => <Card
-          key={club.id}
-          name={club.name}
-          imgUrl={
-            club.imgUrl ||
-            "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
-          }
-          href={`/horse-clubs/${club.id}`} />)}
+        {horseClubs.length > 0 && (
+          <div className={styles.sectionWrapper}>
+            <h2 className={styles.heading2}>Horse Clubs near me</h2>
+            <div className={styles.cardLayout}>
+              {props.horseClubs.map((club) => <Card
+                key={club.id}
+                name={club.name}
+                imgUrl={
+                  club.imgUrl ||
+                  "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+                }
+                href={`/horse-clubs/${club.id}`} />)}
+            </div>
+          </div>
+        )}
+
       </main>
 
     </div>
   )
 }
 
+export async function getStaticProps(context) {
+  return {
+    props: {
+      horseClubs,
+    },
+  };
+}

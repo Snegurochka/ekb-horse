@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { useRouter } from "next/router";
 
 import styles from '../../styles/HorseClubs.module.css';
+import horseClubs from '../../data/horse-clubs.json';
 
-export default function HorseClubs() {
+export default function HorseClubs(props) {
     const router = useRouter();
     const id = router.query.id;
 
@@ -18,9 +19,34 @@ export default function HorseClubs() {
 
             <main className={styles.main}>
                 <Link href='/'>Back to home</Link>
-                Horse Clubs {id}
+                Horse Clubs {id} - {props.horseClub.name}
             </main>
 
         </div>
     )
+}
+
+export async function getStaticProps({ params }) {
+    const horseClubInfo = horseClubs.find((club) => {
+        return club.id.toString() === params.id; //dynamic id
+    });
+    return {
+        props: {
+            horseClub: horseClubInfo ? horseClubInfo : {},
+        },
+    };
+}
+
+export async function getStaticPaths() {
+    const paths = horseClubs.map((club) => {
+        return {
+            params: {
+                id: club.id.toString(),
+            },
+        };
+    });
+    return {
+        paths,
+        fallback: true,
+    };
 }
