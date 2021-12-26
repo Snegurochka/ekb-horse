@@ -12,8 +12,8 @@ export default function HorseClubs(props) {
     if (router.isFallback) {
         return <div>Loading...</div>;
     }
-    const id = router.query.id;
-    const { address, name, neighbourhood, imgUrl } = props.horseClub;
+
+    const { address, name, imgUrl } = props.horseClub;
 
     return (
         <div className={styles.container}>
@@ -35,10 +35,7 @@ export default function HorseClubs(props) {
                         </div>
                         <Image
                             alt="banner image"
-                            src={
-                                imgUrl ||
-                                "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
-                            }
+                            src={imgUrl}
                             width={600}
                             height={360}
                             className={styles.storeImg}
