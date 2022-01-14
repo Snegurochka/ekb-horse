@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 
 import styles from '../../styles/HorseClubs.module.css';
 import { fetchHorseClubs } from '../../lib/horse-clubs';
+import Layout from '../../components/Layout/Layout';
 //import horseClubs from '../../data/horse-clubs.json';
 
 
@@ -17,13 +18,13 @@ export default function HorseClub(props) {
     const { address, name, imgUrl } = props.horseClub;
 
     return (
-        <div className={styles.container}>
+        <div>
             <Head>
                 <title>Horse Club {name}</title>
                 <meta name="description" content="{`Horse Club ${name}`}" />
             </Head>
 
-            <main>
+            <Layout>
                 <div className={styles.container}>
                     <div className={styles.col1}>
                         <div className={styles.backToHomeLink}>
@@ -55,7 +56,7 @@ export default function HorseClub(props) {
                         </div>
                     </div>
                 </div>
-            </main>
+            </Layout>
 
         </div>
     )
