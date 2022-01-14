@@ -1,0 +1,18 @@
+.main {
+    margin   : 48px auto;
+    max-width: 72rem;
+    padding  : 0 16px;
+    position : relative;
+}
+
+@media (min-width: 640px) {
+    .main {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main {
+        padding: 0 2rem;
+    }
+}

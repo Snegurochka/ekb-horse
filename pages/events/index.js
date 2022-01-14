@@ -1,4 +1,5 @@
 import Card from '../../components/Card';
+import Layout from '../../components/Layout/Layout';
 import { fetchEvents } from '../../lib/events';
 
 export default function HorseEvents(props) {
@@ -10,8 +11,7 @@ export default function HorseEvents(props) {
             <meta name="description" content="Events" />
 
             <main>
-                <h1>Events</h1>
-
+                <Layout header="Events">
                 {events.length > 0 && (
                     events.map((event) => <Card
                     key={event.eventId}
@@ -19,6 +19,8 @@ export default function HorseEvents(props) {
                     imgUrl={event.imgUrl}
                     href={`/events/${event.eventId}`} />)
                 )}
+                </Layout>
+
             </main>
         </div>
     )

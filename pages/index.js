@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import Banner from '../components/Banner';
 import Card from '../components/Card';
+import Layout from '../components/Layout/Layout';
 import TopMenu from '../components/Layout/TopMenu';
 
 import { fetchHorseClubs } from '../lib/horse-clubs';
@@ -22,8 +23,7 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <TopMenu />
+      <Layout>
         <Banner clickHandler={btnClickHandler} btnText="Horse Clubs nearby" />
         <div className={styles.heroImage}>
           <Image src="/static/hero-horse-home.png" width={400} height={463} />
@@ -41,7 +41,7 @@ export default function Home(props) {
             </div>
           </div>
         )}
-      </main>
+      </Layout>
 
     </div>
   )

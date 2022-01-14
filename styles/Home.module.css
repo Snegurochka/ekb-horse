@@ -1,31 +1,7 @@
-.container {
-  margin-bottom: 14rem
-    /* 224px */
-  ;
-  position: relative;
-}
-
-.main {
-  margin-top: 2rem
-    /* 40px */
-  ;
-  margin-left : auto;
-  margin-right: auto;
-  max-width   : 72rem
-    /* 1152px */
-  ;
-  padding-left: 1rem
-    /* 16px */
-  ;
-  padding-right: 1rem
-    /* 16px */
-  ;
-}
-
 .heroImage {
   position: absolute;
   top     : 0px;
-  right: 0;
+  right   : 0;
   z-index : -1;
 }
 
@@ -53,41 +29,8 @@
 }
 
 @media (min-width: 640px) {
-  .container {
-    padding-left: 1rem
-      /* 16px */
-    ;
-    padding-right: 1rem
-      /* 16px */
-    ;
-  }
-
-  .main {
-    padding-left: 1.5rem
-      /* 24px */
-    ;
-    padding-right: 1.5rem
-      /* 24px */
-    ;
-  }
-
-  .cardLayout {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    padding-left: 2.5rem
-      /* 40px */
-    ;
-    padding-right: 2.5rem
-      /* 40px */
-    ;
-  }
-
   .heroImage {
-    right: 20%;
+    right: 6%;
   }
 
   .cardLayout {
@@ -96,34 +39,6 @@
 }
 
 @media (min-width: 1024px) {
-  .container {
-    padding-left: 2.5rem
-      /* 40px */
-    ;
-    padding-right: 2.5rem
-      /* 40px */
-    ;
-  }
-
-  .main {
-    padding-left: 2rem
-      /* 32px */
-    ;
-    padding-right: 2rem
-      /* 32px */
-    ;
-  }
-
-  .heroImage {
-    right: 20%;
-  }
-
-  .cardLayout {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1280px) {
   .cardLayout {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
