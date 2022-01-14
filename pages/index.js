@@ -1,7 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
+
 import Banner from '../components/Banner';
 import Card from '../components/Card';
+import TopMenu from '../components/Layout/TopMenu';
+
 import { fetchHorseClubs } from '../lib/horse-clubs';
 
 import styles from '../styles/Home.module.css';
@@ -20,6 +23,7 @@ export default function Home(props) {
       </Head>
 
       <main className={styles.main}>
+        <TopMenu />
         <Banner clickHandler={btnClickHandler} btnText="Horse Clubs nearby" />
         <div className={styles.heroImage}>
           <Image src="/static/hero-horse-home.png" width={400} height={463} />
