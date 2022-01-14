@@ -4,10 +4,11 @@ import Image from 'next/image';
 import { useRouter } from "next/router";
 
 import styles from '../../styles/HorseClubs.module.css';
-import horseClubs from '../../data/horse-clubs.json';
+import { fetchHorseClubs } from '../../lib/horse-clubs';
+//import horseClubs from '../../data/horse-clubs.json';
 
 
-export default function HorseClubs(props) {
+export default function HorseClub(props) {
     const router = useRouter();
     if (router.isFallback) {
         return <div>Loading...</div>;
@@ -61,6 +62,8 @@ export default function HorseClubs(props) {
 }
 
 export async function getStaticProps({ params }) {
+    const horseClubs = await fetchHorseClubs();
+
     const horseClubInfo = horseClubs.find((club) => {
         return club.id.toString() === params.id; //dynamic id
     });
@@ -72,6 +75,8 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
+    const horseClubs = await fetchHorseClubs();
+
     const paths = horseClubs.map((club) => {
         return {
             params: {
