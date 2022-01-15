@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 import Banner from '../components/Banner';
-import ClubCard from '../components/ClubCard';
+import ClubCard from '../components/ClubCard/ClubCard';
 import Layout from '../components/Layout/Layout';
 
 
