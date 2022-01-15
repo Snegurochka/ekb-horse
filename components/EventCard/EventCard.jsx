@@ -9,7 +9,7 @@ import ArrowRightIcon from "../Layout/icons/arrow-right-icon";
 
 
 const EventCard = (props) => {
-    const { title, imgUrl } = props;
+    const { title, imgUrl, id, date, description, address } = props;
     return (
         <Card>
             <div className={styles.item}>
@@ -23,17 +23,18 @@ const EventCard = (props) => {
                     <div className={styles.summary}>
                         <h2>{title}</h2>
                         <div className={styles.date}>
-                            <DateIcon /><time>Date</time></div>
-                        <p>Description</p>
+                            <DateIcon /><time>{date}</time>
+                        </div>
+                        <p>{description}</p>
                     </div>
                     <div className={styles.address}>
                         <AddressIcon />
-                        <address>Address</address>
+                        <address>{address}</address>
                     </div>
                 </div>
                 <div className={styles.actions}>
-                    <Button link='/'><span>Explore Event</span>
-                    <span className={styles.icon}><ArrowRightIcon /></span></Button>
+                    <Button link={`/events/${id}`}><span>Explore Event</span>
+                        <span className={styles.icon}><ArrowRightIcon /></span></Button>
                 </div>
             </div>
         </Card>
