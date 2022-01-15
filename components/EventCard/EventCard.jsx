@@ -6,6 +6,7 @@ import Button from "../UI/Button/Button";
 import DateIcon from "../Layout/icons/date-icon";
 import AddressIcon from "../Layout/icons/address-icon";
 import ArrowRightIcon from "../Layout/icons/arrow-right-icon";
+import Link from "next/link";
 
 
 const EventCard = (props) => {
@@ -21,7 +22,11 @@ const EventCard = (props) => {
                 />
                 <div className={styles.content}>
                     <div className={styles.summary}>
-                        <h2>{title}</h2>
+                        <h2>
+                            <Link href={`/events/${id}`}>
+                                {title}
+                            </Link>
+                        </h2>
                         <div className={styles.date}>
                             <DateIcon /><time>{date}</time>
                         </div>

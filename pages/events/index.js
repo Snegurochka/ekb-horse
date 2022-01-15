@@ -13,8 +13,8 @@ export default function HorseEvents(props) {
             <Layout header="Events">
                 {events.length > 0 && (
                     events.map((event) => <EventCard
-                        key={event.eventId}
-                        id={event.eventId}
+                        key={event.id}
+                        id={event.id}
                         title={event.title}
                         imgUrl={event.imgUrl}
                         date={event.date}
