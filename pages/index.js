@@ -2,9 +2,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 import Banner from '../components/Banner';
-import Card from '../components/Card';
+import ClubCard from '../components/ClubCard';
 import Layout from '../components/Layout/Layout';
-import TopMenu from '../components/Layout/TopMenu';
+
 
 import { fetchHorseClubs } from '../lib/horse-clubs';
 
@@ -33,7 +33,7 @@ export default function Home(props) {
           <div className={styles.sectionWrapper}>
             <h2 className={styles.heading2}>Horse Clubs near me</h2>
             <div className={styles.cardLayout}>
-              {props.horseClubs.map((club) => <Card
+              {props.horseClubs.map((club) => <ClubCard
                 key={club.id}
                 name={club.name}
                 imgUrl={club.imgUrl}

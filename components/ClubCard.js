@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import styles from "../styles/Card.module.css";
+import styles from "../styles/ClubCard.module.css";
 
-const Card = (props) => {
+const ClubCard = (props) => {
     return (
         <Link href={props.href}>
             <a className={styles.cardLink}>
@@ -26,4 +26,4 @@ const Card = (props) => {
     )
 }
 
-export default Card
+export default ClubCard
