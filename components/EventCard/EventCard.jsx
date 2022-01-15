@@ -2,7 +2,7 @@ import styles from "./EventCard.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-import Card from "../UI/Card";
+import Card from "../UI/Card/Card";
 
 
 const EventCard = (props) => {

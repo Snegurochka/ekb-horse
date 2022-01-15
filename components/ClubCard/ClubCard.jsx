@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import styles from "./ClubCard.module.css";
-import Card from "../UI/Card";
+import Card from "../UI/Card/Card";
 
 const ClubCard = (props) => {
     return (
@@ -15,7 +15,7 @@ const ClubCard = (props) => {
                                 className={styles.cardImage}
                                 src={props.imgUrl}
                                 width={316}
-                                height={180}
+                                height={190}
                             />
                         </div>
                         <div className={styles.container}>
