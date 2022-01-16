@@ -1,15 +1,17 @@
 import TopMenu from "./TopMenu";
 
-import styles from '../../styles/Layout.module.css';
+import styles from './Layout.module.css';
 
 const Layout = (props) => {
     const { header } = props;
     return (
-        <main className={styles.main}>
+        <>
             <TopMenu />
-            {header ? (<h1>{header}</h1>) : null}
-            {props.children}
-        </main>
+            <main className={styles.main}>
+                {header ? (<h1>{header}</h1>) : null}
+                {props.children}
+            </main>
+        </>
     )
 }
 
